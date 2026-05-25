@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_grey">
+
+    <!-- Yellow Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow_primary"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Orders"
+                android:textColor="@color/text_dark"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="View your completed trips here. You can\ndownload invoices or quickly book the same order again."
+                android:textColor="@color/text_dark"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Truck illustration placeholder -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@android:drawable/ic_menu_directions"
+            android:scaleType="fitCenter" />
+
+    </LinearLayout>
+
+    <!-- Search + Filter + Sort Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="@color/white">
+
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_search_bar"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="8dp"
+            android:hint="Search by Order ID / Location"
+            android:textColorHint="@color/text_light_grey"
+            android:textSize="13sp"
+            android:paddingHorizontal="12dp"
+            android:inputType="text"
+            android:imeOptions="actionSearch" />
+
+        <!-- Filter Button -->
+        <TextView
+            android:id="@+id/btnFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_filter_button"
+            android:drawableStart="@android:drawable/ic_menu_sort_by_size"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:text="Filter"
+            android:textColor="@color/text_dark"
+            android:textSize="13sp" />
+
+        <!-- Sort Button -->
+        <TextView
+            android:id="@+id/btnSort"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_filter_button"
+            android:drawableStart="@android:drawable/ic_menu_upload"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:text="Sort"
+            android:textColor="@color/text_dark"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <!-- Tab Row -->
+    <LinearLayout
+        android:id="@+id/tabContainer"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="6dp">
+
+        <TextView
+            android:id="@+id/tabAllOrders"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_yellow_pill"
+            android:gravity="center"
+            android:text="All Orders"
+            android:textColor="@color/text_dark"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tabCompleted"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_inactive"
+            android:gravity="center"
+            android:text="Completed"
+            android:textColor="@color/tab_inactive_text"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tabCancelled"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_inactive"
+            android:gravity="center"
+            android:text="Cancelled"
+            android:textColor="@color/tab_inactive_text"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tabBookedAgain"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_inactive"
+            android:gravity="center"
+            android:text="Booked Again"
+            android:textColor="@color/tab_inactive_text"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <!-- Info Banner -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/infoBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/banner_background"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <!-- Info Icon -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ℹ"
+                android:textColor="#5C6BC0"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Banner Text -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="यहाँ आपके सभी पिछले ऑर्डर दिखाए गए हैं।"
+                    android:textColor="@color/text_dark"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="आप इनवॉइस डाउनलोड कर सकते हैं या उसी पते पर दोबारा ऑर्डर कर सकते हैं।"
+                    android:textColor="@color/text_grey"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <!-- Dismiss button -->
+            <TextView
+                android:id="@+id/btnDismissBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✕"
+                android:textColor="@color/text_grey"
+                android:textSize="16sp"
+                android:padding="4dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerOrders"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingVertical="8dp"
+        android:clipToPadding="false" />
+
+</LinearLayout>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/card_white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- Truck Icon -->
+        <ImageView
+            android:id="@+id/ivTruckIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_launcher_foreground"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Vehicle Type -->
+        <TextView
+            android:id="@+id/tvVehicleType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Four Wheeler"
+            android:textColor="@color/text_dark"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tvPrice"
+            app:layout_constraintStart_toEndOf="@id/ivTruckIcon"
+            app:layout_constraintTop_toTopOf="@id/ivTruckIcon" />
+
+        <!-- Date and Order ID -->
+        <TextView
+            android:id="@+id/tvDateTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:text="05 Feb, 4:46 PM  |  Order ID: #ORD12345"
+            android:textColor="@color/text_grey"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/tvPrice"
+            app:layout_constraintStart_toEndOf="@id/ivTruckIcon"
+            app:layout_constraintTop_toBottomOf="@id/tvVehicleType" />
+
+        <!-- Price -->
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹ 229.0"
+            android:textColor="@color/text_dark"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/ivMoreOptions"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 3 dot menu -->
+        <ImageView
+            android:id="@+id/ivMoreOptions"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_more"
+            android:padding="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Divider line -->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/divider"
+            app:layout_constraintTop_toBottomOf="@id/ivTruckIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Pickup dot -->
+        <ImageView
+            android:id="@+id/ivPickupDot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/ic_pickup_dot"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintBottom_toTopOf="@id/ivDropDot" />
+
+        <!-- Pickup Address -->
+        <TextView
+            android:id="@+id/tvPickupAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="741, Gumanwara"
+            android:textColor="@color/text_dark"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@id/ivPickupDot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivPickupDot"
+            app:layout_constraintBottom_toTopOf="@id/tvDropAddress" />
+
+        <!-- Drop dot -->
+        <ImageView
+            android:id="@+id/ivDropDot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/ic_drop_dot"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPickupAddress" />
+
+        <!-- Drop Address -->
+        <TextView
+            android:id="@+id/tvDropAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="00, Main Rd, Shivaji Nagar, Jhansi, Uttar Pradesh 284001, India"
+            android:textColor="@color/text_dark"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@id/ivDropDot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPickupAddress" />
+
+        <!-- Bottom row divider -->
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/divider"
+            app:layout_constraintTop_toBottomOf="@id/tvDropAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Cancelled Badge -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_cancelled_badge"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:text="CANCELLED"
+            android:textColor="@color/cancelled_red"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+        <!-- Invoice Button -->
+        <TextView
+            android:id="@+id/btnInvoice"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_invoice_button"
+            android:drawableStart="@android:drawable/ic_menu_save"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:text="Invoice"
+            android:textColor="@color/text_dark"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnBookAgain"
+            app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+        <!-- Book Again Button -->
+        <TextView
+            android:id="@+id/btnBookAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_book_again_button"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:text="Book Again"
+            android:textColor="@color/text_dark"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.MyOrdersDemo" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/yellow_primary</item>
+        <item name="colorPrimaryVariant">@color/yellow_dark</item>
+        <item name="colorOnPrimary">@color/text_dark</item>
+        <item name="android:windowBackground">@color/background_grey</item>
+        <item name="android:statusBarColor">@color/yellow_primary</item>
+    </style>
+</resources>
